@@ -19,6 +19,12 @@ connectToDatabase(process.env.DB_NAME);
 app.use("/", require("./routes"));
 
 // Server (Listen)
+
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
+
+// localhost
 app.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
 });
