@@ -12,8 +12,11 @@ const host = process.env.HOST || "localhost";
 // middleware
 app.use(express.json());
 
+// Connect to Database
+connectToDatabase(process.env.DB_NAME);
+
 // Routes
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes"));
 
 // Server (Listen)
 app.listen(port, host, () => {

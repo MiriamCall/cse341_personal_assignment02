@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 
-const connectToDatabase = async () => {
+const connectToDatabase = async (db_name) => {
   try {
     const client = await MongoClient.connect(process.env.MONGODB_URI);
     console.log("Connected to database");
