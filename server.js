@@ -20,11 +20,11 @@ app.use("/", require("./routes"));
 
 // Server (Listen)
 
-// app.listen(port, () => {
-//   console.log(`Server running on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 // localhost
-app.listen(port, host, () => {
-  console.log(`Server is running on http://${host}:${port}`);
-});
+// app.listen(port, host, () => {
+//   console.log(`Server is running on http://${host}:${port}`);
+// });
