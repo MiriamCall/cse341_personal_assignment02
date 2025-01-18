@@ -7,4 +7,13 @@ const getContacts = async (req, res) => {
   res.json(contacts);
 };
 
-module.exports = { getContacts };
+const getContactById = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  const db = await connectToDatabase(process.env.DB_NAME);
+  const contact = await db.collection("contacts").findOne({
+    _id: userId,
+  });
+  res.json(contact);
+};
+
+module.exports = { getContacts, getContactById };
